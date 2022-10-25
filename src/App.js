@@ -18,7 +18,7 @@ function App() {
           <div id="content">
             <TopBar />
             <Routes>
-              <Route path="/dashboard" element={<Dashboard/>}></Route>
+              <Route path="" element={<Dashboard/>}></Route>
               <Route path="/users" element={<Users/>}></Route>
             </Routes>
           </div>
