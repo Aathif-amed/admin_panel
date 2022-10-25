@@ -17,6 +17,9 @@ function App() {
         <div id="content-wrapper" className="d-flex flex-column">
           <div id="content">
             <TopBar />
+            <div>
+              Click on dashboard button
+            </div>
             <Routes>
               <Route path="/dashboard" element={<Dashboard/>}></Route>
               <Route path="/users" element={<Users/>}></Route>
