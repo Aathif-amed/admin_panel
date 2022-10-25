@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Sidebar from "./Sidebar";
+import "../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+import "./fontawesome-free/css/all.css";
+import "./fontawesome-free/js/all.js";
+import "./css/sb-admin-2.css";
+import TopBar from "./TopBar";
+import Dashboard from "./Dashboard";
+import Users from "./Users";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div id="wrapper">
+        <Sidebar />
+        <div id="content-wrapper" className="d-flex flex-column">
+          <div id="content">
+            <TopBar />
+            <Routes>
+              <Route path="/dashboard" element={<Dashboard/>}></Route>
+              <Route path="/users" element={<Users/>}></Route>
+            </Routes>
+          </div>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
